@@ -8,8 +8,8 @@
 .buildlog/
 .history
 .svn/
-*.cc -linguist-detectable
-*.cpp -linguist-detectable
+*.cc 
+*.cpp 
 migrate_working_dir/
 
 # IntelliJ related
