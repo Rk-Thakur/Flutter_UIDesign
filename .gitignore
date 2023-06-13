@@ -10,6 +10,7 @@
 .svn/
 *.cc 
 *.cpp 
+*.c
 migrate_working_dir/
 
 # IntelliJ related
