@@ -1,16 +1,11 @@
-# uidesign
+# Pill Tracking
 
-A new Flutter project.
+The pill tracking app is a user-friendly mobile application that helps individuals manage their medication intake. It provides reminders, tracks pill consumption, and offers detailed reports. The app enhances adherence, reduces errors, and improves overall health management. With its intuitive interface, the pill tracking app simplifies medication organization and promotes a healthier lifestyle.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## ScreenShots:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![alt text](assets/app/first.png)
+![alt text](assets/app/second.png)
+![alt text](assets/app/third.png)
+![alt text](assets/app/fourth.png)
