@@ -5,7 +5,7 @@ The pill tracking app is a user-friendly mobile application that helps individua
 
 ## ScreenShots:
 <img src="assets/app/first.png" width="390" height="844">
-<!-- ![alt text](assets/app/first.png)
-![alt text](assets/app/second.png)
-![alt text](assets/app/third.png)
-![alt text](assets/app/fourth.png) -->
+<img src="assets/app/second.png" width="390" height="844">
+<img src="assets/app/third.png" width="390" height="844">
+<img src="assets/app/fourth.png" width="390" height="844">
+
