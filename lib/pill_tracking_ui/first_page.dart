@@ -1,21 +1,63 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:getwidget/components/progress_bar/gf_progress_bar.dart';
 import 'package:getwidget/types/gf_progress_type.dart';
+import 'package:uidesign/pill_tracking_ui/second_page.dart';
 
-class FirstPage extends StatelessWidget {
+class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
 
   @override
+  State<FirstPage> createState() => _FirstPageState();
+}
+
+class _FirstPageState extends State<FirstPage> {
+  List<MedicineModel?> medicineModel = [
+    MedicineModel(
+        imageAsset: 'assets/tablet.png',
+        medicineName: 'Omega 3',
+        medicineDescription: '1 tablet after meals',
+        days: '7 days'),
+    MedicineModel(
+        imageAsset: 'assets/capsule.png',
+        medicineName: 'ComLivit',
+        medicineDescription: '1 tablet after meals',
+        days: '8 days'),
+  ];
+  List<MedicineModel?> insuline = [
+    MedicineModel(
+        imageAsset: 'assets/insulin.png',
+        medicineName: '5-HTP',
+        medicineDescription: '1 ampoule',
+        days: '2 days'),
+    MedicineModel(
+        imageAsset: 'assets/inhale.png',
+        medicineName: 'Inhaler',
+        medicineDescription: '2 * A day',
+        days: '2 days'),
+  ];
+  @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: Padding(
-          padding: EdgeInsets.only(left: 24.sp, right: 24.sp),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const SecondPage()));
+        },
+        child: const Icon(Icons.add),
+      ),
+      body: Padding(
+        padding: EdgeInsets.only(left: 24.sp, right: 24.sp),
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                height: MediaQuery.of(context).padding.top,
+              ),
               //Navbar
               SizedBox(
                 width: 375.w,
@@ -231,86 +273,255 @@ class FirstPage extends StatelessWidget {
                     SizedBox(
                       height: 28.h,
                     ),
-                    //time
-                    Align(
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          "8:00",
-                          style: TextStyle(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w600,
-                              color: const Color(0xff191d30)),
-                        )),
-
-                    SizedBox(
-                      height: 16.h,
-                    ),
-                    Container(
-                      width: 327.w,
-                      height: 100.h,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(24.sp),
-                        border: Border.all(
-                            width: 1.sp, color: const Color(0xffecedef)),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 20.sp, vertical: 20.sp),
-                        child: Row(
-                          children: [
-                            Image.asset(
-                              'assets/capsule.png',
-                              height: 60.h,
-                              width: 60.w,
-                              fit: BoxFit.cover,
-                            ),
-                            Expanded(
-                                child: Row(
+                    Expanded(
+                        child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                "8:00",
+                                style: TextStyle(
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: const Color(0xff191d30)),
+                              )),
+                          SizedBox(
+                            height: 16.h,
+                          ),
+                          ...medicineModel.map((e) {
+                            return Column(
                               children: [
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Omega 3",
-                                      style: TextStyle(
-                                        color: const Color(0xff191d30),
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 20.sp,
-                                      ),
+                                Slidable(
+                                  closeOnScroll: true,
+                                  startActionPane: ActionPane(
+                                      motion: const ScrollMotion(),
+                                      children: [
+                                        SlidableAction(
+                                          spacing: 10.h,
+                                          onPressed: (doNothing) {},
+                                          icon: Icons.delete,
+                                        ),
+                                      ]),
+                                  endActionPane: ActionPane(
+                                      motion: const ScrollMotion(),
+                                      children: [
+                                        SlidableAction(
+                                          onPressed: (value) {},
+                                          borderRadius:
+                                              BorderRadius.circular(24.sp),
+                                          icon: Icons.archive,
+                                        ),
+                                      ]),
+                                  child: Container(
+                                    width: 327.w,
+                                    height: 100.h,
+                                    decoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.circular(24.sp),
+                                      border: Border.all(
+                                          width: 1.sp,
+                                          color: const Color(0xffecedef)),
                                     ),
-                                    const Spacer(),
-                                    SizedBox(
-                                      width: 215.w,
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 20.sp, vertical: 20.sp),
                                       child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text(
-                                            "1 tablet after meals",
-                                            style: TextStyle(
-                                              color: const Color(0xff8c8e97),
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 16.sp,
-                                            ),
+                                          Image.asset(
+                                            e!.imageAsset,
+                                            height: 60.h,
+                                            width: 60.w,
+                                            fit: BoxFit.cover,
                                           ),
-                                          Text("7 days",
-                                              style: TextStyle(
-                                                color: const Color(0xff8c8e97),
-                                                fontWeight: FontWeight.w400,
-                                                fontSize: 16.sp,
-                                              )),
+                                          Expanded(
+                                              child: Row(
+                                            children: [
+                                              Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    e.medicineName,
+                                                    style: TextStyle(
+                                                      color: const Color(
+                                                          0xff191d30),
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      fontSize: 20.sp,
+                                                    ),
+                                                  ),
+                                                  const Spacer(),
+                                                  SizedBox(
+                                                    width: 215.w,
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Text(
+                                                          e.medicineDescription,
+                                                          style: TextStyle(
+                                                            color: const Color(
+                                                                0xff8c8e97),
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                            fontSize: 16.sp,
+                                                          ),
+                                                        ),
+                                                        Text(e.days,
+                                                            style: TextStyle(
+                                                              color: const Color(
+                                                                  0xff8c8e97),
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400,
+                                                              fontSize: 16.sp,
+                                                            )),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              )
+                                            ],
+                                          ))
                                         ],
                                       ),
                                     ),
-                                  ],
-                                )
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 16.h,
+                                ),
                               ],
-                            ))
-                          ],
-                        ),
+                            );
+                          }),
+                          Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                "14:00",
+                                style: TextStyle(
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: const Color(0xff191d30)),
+                              )),
+                          SizedBox(
+                            height: 16.h,
+                          ),
+                          ...insuline.map((e) {
+                            return Column(
+                              children: [
+                                Slidable(
+                                  closeOnScroll: true,
+                                  startActionPane: ActionPane(
+                                      motion: const ScrollMotion(),
+                                      children: [
+                                        SlidableAction(
+                                          spacing: 10.h,
+                                          onPressed: (doNothing) {},
+                                          icon: Icons.delete,
+                                        ),
+                                      ]),
+                                  endActionPane: ActionPane(
+                                      motion: const ScrollMotion(),
+                                      children: [
+                                        SlidableAction(
+                                          onPressed: (value) {},
+                                          borderRadius:
+                                              BorderRadius.circular(24.sp),
+                                          icon: Icons.archive,
+                                        ),
+                                      ]),
+                                  child: Container(
+                                    width: 327.w,
+                                    height: 100.h,
+                                    decoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.circular(24.sp),
+                                      border: Border.all(
+                                          width: 1.sp,
+                                          color: const Color(0xffecedef)),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 20.sp, vertical: 20.sp),
+                                      child: Row(
+                                        children: [
+                                          Image.asset(
+                                            e!.imageAsset,
+                                            height: 60.h,
+                                            width: 60.w,
+                                            fit: BoxFit.cover,
+                                          ),
+                                          Expanded(
+                                              child: Row(
+                                            children: [
+                                              Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    e.medicineName,
+                                                    style: TextStyle(
+                                                      color: const Color(
+                                                          0xff191d30),
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      fontSize: 20.sp,
+                                                    ),
+                                                  ),
+                                                  const Spacer(),
+                                                  SizedBox(
+                                                    width: 215.w,
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Text(
+                                                          e.medicineDescription,
+                                                          style: TextStyle(
+                                                            color: const Color(
+                                                                0xff8c8e97),
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                            fontSize: 16.sp,
+                                                          ),
+                                                        ),
+                                                        Text(e.days,
+                                                            style: TextStyle(
+                                                              color: const Color(
+                                                                  0xff8c8e97),
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400,
+                                                              fontSize: 16.sp,
+                                                            )),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              )
+                                            ],
+                                          ))
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 16.h,
+                                ),
+                              ],
+                            );
+                          })
+                        ],
                       ),
-                    ),
+                    )),
                   ],
                 ),
               ),
@@ -320,4 +531,17 @@ class FirstPage extends StatelessWidget {
       ),
     );
   }
+}
+
+class MedicineModel {
+  String imageAsset;
+  String medicineName;
+  String medicineDescription;
+  String days;
+  MedicineModel({
+    required this.imageAsset,
+    required this.medicineName,
+    required this.medicineDescription,
+    required this.days,
+  });
 }
