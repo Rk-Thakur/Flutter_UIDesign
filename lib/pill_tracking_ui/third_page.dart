@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,15 +16,10 @@ class _ThirdPageState extends State<ThirdPage> {
     MedicationModel(image: 'assets/insulin.png'),
     MedicationModel(image: 'assets/inhale.png'),
   ];
-  List<String> time = [
-    'NeverMind',
-    'Before meals',
-    'After Meals',
-    'After Meals'
-  ];
+  List<String> times = ['5 m', '10 m', '15 m', '20 m', '30 m', '45 m'];
   final nameController = TextEditingController();
-  List<bool?> isTapped = [false, false, false, false];
-  List<bool?> isMedicine = [false, false, false, false];
+  List<bool?> isTappeds = [false, false, false, false, false, false];
+  bool isSwitched = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +47,7 @@ class _ThirdPageState extends State<ThirdPage> {
             ),
             //body
             SizedBox(
-                height: 405.h,
+                height: 462.h,
                 width: 375.w,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +58,7 @@ class _ThirdPageState extends State<ThirdPage> {
                     SizedBox(
                       height: 20.h,
                       child: Text(
-                        "1 is 2",
+                        "2 is 2",
                         style: TextStyle(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w400,
@@ -75,7 +71,7 @@ class _ThirdPageState extends State<ThirdPage> {
                     SizedBox(
                       height: 38.h,
                       child: Text(
-                        "Add Medication",
+                        "Schedule",
                         style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 34.sp,
@@ -86,164 +82,200 @@ class _ThirdPageState extends State<ThirdPage> {
                       height: 40.h,
                     ),
                     SizedBox(
-                        height: 74.h,
-                        child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: medicationModel.length,
-                            itemBuilder: (context, index) {
-                              return Row(
-                                children: [
-                                  Stack(
-                                    children: [
-                                      GestureDetector(
-                                        onTap: () {
-                                          setState(() {
-                                            if (isMedicine.contains(true)) {
-                                              setState(() {
-                                                isMedicine[index] = false;
-                                              });
-                                            } else {
-                                              setState(() {
-                                                isMedicine[index] =
-                                                    !isMedicine[index]!;
-                                              });
-                                            }
-                                          });
-                                        },
-                                        child: Container(
-                                          width: 64.w,
-                                          height: 64.h,
-                                          decoration: BoxDecoration(
-                                            color: Colors.grey.withOpacity(.2),
-                                            shape: BoxShape.circle,
-                                          ),
-                                          child: Image.asset(
-                                              medicationModel[index].image),
-                                        ),
+                      width: 375.w,
+                      height: 64.h,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            height: 64.h,
+                            width: 77.w,
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: 5.w,
+                                  height: 64.h,
+                                  decoration: BoxDecoration(
+                                      color: const Color.fromARGB(
+                                          255, 148, 212, 228),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(100.sp))),
+                                ),
+                                const Spacer(),
+                                SizedBox(
+                                  width: 64.w,
+                                  height: 64.h,
+                                  child: Image.asset('assets/insulin.png'),
+                                )
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                              child: SizedBox(
+                            width: 242.w,
+                            height: 52.h,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Omega 3",
+                                  style: TextStyle(
+                                    color: const Color(0xff191d30),
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 20.sp,
+                                  ),
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      '1 table after  meals',
+                                      style: TextStyle(
+                                        color: const Color(0xff8c8e97),
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 16.sp,
                                       ),
-                                      !isMedicine[index]!
-                                          ? const SizedBox.shrink()
-                                          : Positioned(
-                                              left: 44.w,
-                                              child: Container(
-                                                  width: 18.sp,
-                                                  height: 18.sp,
-                                                  decoration:
-                                                      const BoxDecoration(
-                                                          shape:
-                                                              BoxShape.circle,
-                                                          color: Color(
-                                                              0xff67b779)),
-                                                  child: Image.asset(
-                                                      'assets/tick.png')))
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    width: 24.w,
-                                  ),
-                                ],
-                              );
-                            })),
-                    SizedBox(
-                      height: 40.h,
-                    ),
-                    SizedBox(
-                      height: 24.h,
-                      child: TextFormField(
-                        cursorColor: const Color(0xff191d30),
-                        controller: nameController,
-                        decoration: InputDecoration(
-                            enabledBorder: const UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.transparent),
+                                    ),
+                                    Text('7 days',
+                                        style: TextStyle(
+                                          color: const Color(0xff8c8e97),
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 16.sp,
+                                        )),
+                                  ],
+                                ),
+                              ],
                             ),
-                            focusedBorder: const UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.transparent),
-                            ),
-                            hintText: 'Name',
-                            hintStyle: TextStyle(
-                                fontSize: 20.sp,
-                                fontWeight: FontWeight.w700,
-                                color: const Color.fromARGB(255, 139, 140, 141)
-                                    .withOpacity(.30))),
+                          ))
+                        ],
                       ),
                     ),
                     SizedBox(
                       height: 44.h,
                     ),
                     SizedBox(
+                      width: 375.w,
                       height: 24.h,
-                      child: TextFormField(
-                        cursorColor: const Color(0xff191d30),
-                        decoration: InputDecoration(
-                            enabledBorder: const UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.transparent),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Dose 1",
+                            style: TextStyle(
+                              color: const Color(0xff191d30),
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20.sp,
                             ),
-                            focusedBorder: const UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.transparent),
-                            ),
-                            hintText: 'Single dose,e.g 1 tablet',
-                            hintStyle: TextStyle(
-                                fontSize: 20.sp,
+                          ),
+                          Text("00:00",
+                              style: TextStyle(
+                                color: const Color(0xffc4cacf),
                                 fontWeight: FontWeight.w700,
-                                color: const Color.fromARGB(255, 139, 140, 141)
-                                    .withOpacity(.30))),
+                                fontSize: 20.sp,
+                              )),
+                        ],
                       ),
                     ),
                     SizedBox(
-                      height: 36.h,
+                      height: 25.h,
                     ),
                     SizedBox(
-                        height: 30.h,
+                      height: 48.h,
+                      child: Container(
+                        height: 48.h,
+                        width: 48.w,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color(0xfff2f6f7),
+                        ),
+                        child: const Center(
+                          child: Icon(
+                            Icons.add,
+                            color: Color(0xff191d30),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 44.h,
+                    ),
+                    SizedBox(
+                      height: 32.h,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Reminders",
+                            style: TextStyle(
+                              color: const Color(0xff191d30),
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20.sp,
+                            ),
+                          ),
+                          CupertinoSwitch(
+                              activeColor: const Color(0xfff2f6f7),
+                              trackColor: const Color(0xfff2f6f7),
+                              thumbColor: isSwitched
+                                  ? const Color(0xff1892fa)
+                                  : Colors.white,
+                              value: isSwitched,
+                              onChanged: (value) {
+                                setState(() {
+                                  isSwitched = value;
+                                });
+                              })
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 28.h,
+                    ),
+                    SizedBox(
+                        height: 24.h,
                         child: ListView.builder(
                             scrollDirection: Axis.horizontal,
-                            itemCount: time.length,
+                            itemCount: times.length,
                             itemBuilder: (context, index) {
                               return Row(
                                 children: [
                                   GestureDetector(
                                     onTap: () {
                                       setState(() {
-                                        if (isTapped.contains(true)) {
+                                        if (isTappeds.contains(true)) {
                                           setState(() {
-                                            isTapped[index] = false;
+                                            isTappeds[index] = false;
                                           });
                                         } else {
                                           setState(() {
-                                            isTapped[index] = !isTapped[index]!;
+                                            isTappeds[index] =
+                                                !isTappeds[index]!;
                                           });
                                         }
                                       });
                                     },
-                                    child: Container(
-                                      width: 120.w,
-                                      height: 90.h,
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(100.sp),
-                                        color: const Color.fromARGB(
-                                            255, 233, 241, 242),
-                                      ),
+                                    child: SizedBox(
+                                      width: 53.w,
+                                      height: 24.h,
                                       child: Align(
                                           alignment: Alignment.center,
                                           child: Text(
-                                            time[index],
+                                            times[index],
                                             style: TextStyle(
-                                                fontSize: 15.sp,
-                                                fontWeight: FontWeight.w700,
-                                                color: !isTapped[index]!
-                                                    ? const Color.fromARGB(
-                                                            255, 139, 140, 141)
-                                                        .withOpacity(.30)
+                                                fontSize: 20.sp,
+                                                fontWeight: FontWeight.w600,
+                                                color: !isTappeds[index]!
+                                                    ? const Color(0xffc4cacf)
                                                     : const Color(0xff191d30)),
                                           )),
                                     ),
                                   ),
                                   SizedBox(
-                                    width: 24.w,
+                                    width: 10.w,
                                   ),
                                 ],
                               );
-                            })),
+                            }))
                   ],
                 )),
 
@@ -256,15 +288,16 @@ class _ThirdPageState extends State<ThirdPage> {
                   width: 327.w,
                   height: 54.h,
                   decoration: BoxDecoration(
-                      color: nameController.text.isEmpty
-                          ? const Color.fromARGB(255, 171, 128, 128)
+                      color: !isSwitched
+                          ? const Color(0xfff4f4f5)
                           : const Color(0xff1892fa),
                       borderRadius: BorderRadius.all(Radius.circular(16.0.sp))),
                   child: Center(
                       child: Text(
-                    nameController.text.isEmpty ? "Fill in the fields" : "Next",
+                    !isSwitched ? "Add medication times" : "Done",
                     style: TextStyle(
-                      color: Colors.white,
+                      color:
+                          !isSwitched ? const Color(0xffc4cacf) : Colors.white,
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                     ),

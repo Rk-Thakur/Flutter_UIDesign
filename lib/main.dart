@@ -19,9 +19,10 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
         designSize: const Size(375, 812),
         builder: (context, child) {
-          return const MaterialApp(
-            // debugShowCheckedModeBanner: false,
-            home: FirstPage(),
+          return MaterialApp(
+            theme: ThemeData(),
+            debugShowCheckedModeBanner: false,
+            home: const FirstPage(),
           );
         });
   }

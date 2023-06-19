@@ -264,14 +264,16 @@ class _SecondPageState extends State<SecondPage> {
                   height: 54.h,
                   decoration: BoxDecoration(
                       color: nameController.text.isEmpty
-                          ? const Color.fromARGB(255, 171, 128, 128)
+                          ? const Color(0xfff4f4f5)
                           : const Color(0xff1892fa),
                       borderRadius: BorderRadius.all(Radius.circular(16.0.sp))),
                   child: Center(
                       child: Text(
                     nameController.text.isEmpty ? "Fill in the fields" : "Next",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: nameController.text.isEmpty
+                          ? const Color(0xffc4cacf)
+                          : Colors.white,
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                     ),
