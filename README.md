@@ -1,16 +1,10 @@
-# uidesign
+# Education Tech
 
-A new Flutter project.
+"EduLearn," an innovative education learning app designed to revolutionize the way students learn and acquire knowledge. EduLearn provides a comprehensive platform that combines interactive lessons, engaging exercises, and personalized learning experiences, making education both effective and enjoyable. 
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## ScreenShots:
+<img src="assets/app/second.png" width="390" height="844">
+<img src="assets/app/third.png" width="390" height="844">
+<img src="assets/app/fourth.png" width="390" height="844">
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

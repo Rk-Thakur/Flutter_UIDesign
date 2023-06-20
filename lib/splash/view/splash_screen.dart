@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:uidesign/core/ui/size_box.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,19 +14,17 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
-            height: 44.h,
-          ),
+          upperSizedBox,
           SizedBox(
             width: 375.w,
             height: 326.h,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(
-                  'illustration.png',
+                  'assets/illustration.png',
                   width: 375.w,
                   height: 264.h,
                 ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uidesign/splash/view/splash_screen.dart';
+import 'package:uidesign/onboarding/views/onboarding_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +20,8 @@ class MyApp extends StatelessWidget {
         designSize: const Size(375, 812),
         builder: (context, child) {
           return const MaterialApp(
-            home: SplashScreen(),
+            debugShowCheckedModeBanner: false,
+            home: OnBoardingScreen(),
           );
         });
   }
