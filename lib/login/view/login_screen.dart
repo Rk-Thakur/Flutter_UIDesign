@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uidesign/core/ui/size_box.dart';
 
 import '../../core/contants/colors.dart';
+import '../../signup/view/sign_up.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -29,7 +30,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: EdgeInsets.only(left: 16.sp, right: 16.sp),
                 child: Column(
                   children: [
-                    //illustration
                     Image.asset(
                       'assets/login.png',
                       width: 343.w,
@@ -39,7 +39,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: 16.h,
                     ),
-                    //login and socia login
                     SizedBox(
                       width: 343.w,
                       height: 109.h,
@@ -141,8 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           TextFormField(
                             keyboardType: TextInputType.text,
                             decoration: InputDecoration(
-                              suffixIcon:
-                                  const Icon(Icons.visibility_off_outlined),
+                              suffixIcon: const Icon(Icons.visibility_off_outlined),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12.0),
                                 borderSide: const BorderSide(
@@ -175,8 +173,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             height: 56.h,
                             width: 343.w,
                             decoration: BoxDecoration(
-                                color: appThemeColor,
-                                borderRadius: BorderRadius.circular(16.sp)),
+                                color: appThemeColor, borderRadius: BorderRadius.circular(16.sp)),
                             child: Center(
                                 child: Text(
                               "Log In",
@@ -190,13 +187,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         ],
                       ),
                     ),
-
-                    Text(
-                      "Sign Up",
-                      style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.bold,
-                          color: const Color(0xff78746d)),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context, MaterialPageRoute(builder: (context) => const SignUpScreen()));
+                      },
+                      child: Text(
+                        "Sign Up",
+                        style: TextStyle(
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xff78746d)),
+                      ),
                     ),
                   ],
                 ),
