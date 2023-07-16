@@ -1,0 +1,13 @@
+name: Fitness_App
+
+packages:
+  - packages/*
+
+scripts:
+  analyze:
+    exec: dart analyze .  
+
+  svg:
+    exec: dart run bin/svg.dart
+    packageFilters:
+      fileExists: bin/svg.dart
