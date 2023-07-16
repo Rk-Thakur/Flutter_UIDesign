@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: Fitness_App_Components,Fitness_App_Resources
+dependency_overrides:
+  Fitness_App_Components:
+    path: ../fitness_component
+  Fitness_App_Resources:
+    path: ../fitness_resources
