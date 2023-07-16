@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uidesign/core/ui/size_box.dart';
 
 import '../../core/contants/colors.dart';
+import '../../homepage/widgets/homepage.dart';
 import '../../signup/view/sign_up.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -169,20 +170,26 @@ class _LoginScreenState extends State<LoginScreen> {
                           SizedBox(
                             height: 16.h,
                           ),
-                          Container(
-                            height: 56.h,
-                            width: 343.w,
-                            decoration: BoxDecoration(
-                                color: appThemeColor, borderRadius: BorderRadius.circular(16.sp)),
-                            child: Center(
-                                child: Text(
-                              "Log In",
-                              style: TextStyle(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            )),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) => const HomePage()));
+                            },
+                            child: Container(
+                              height: 56.h,
+                              width: 343.w,
+                              decoration: BoxDecoration(
+                                  color: appThemeColor, borderRadius: BorderRadius.circular(16.sp)),
+                              child: Center(
+                                  child: Text(
+                                "Log In",
+                                style: TextStyle(
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              )),
+                            ),
                           ),
                         ],
                       ),
