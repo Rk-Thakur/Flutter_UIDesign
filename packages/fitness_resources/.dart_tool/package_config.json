@@ -158,19 +158,25 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "very_good_analysis",
+      "rootUri": "file:///Users/ranjanthakur/.pub-cache/hosted/pub.dev/very_good_analysis-5.0.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "xml",
       "rootUri": "file:///Users/ranjanthakur/.pub-cache/hosted/pub.dev/xml-6.3.0",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
     {
-      "name": "Fitness_App_Resources",
+      "name": "fitness_resources",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-07-16T18:05:24.769301Z",
+  "generated": "2023-07-18T08:16:34.110451Z",
   "generator": "pub",
   "generatorVersion": "3.0.3"
 }

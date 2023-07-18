@@ -10,8 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  Fitness_App_Components: any
-  Fitness_App_Resources: any
+  fitness_components: any
+  fitness_resources: any
 
 
   cupertino_icons: ^1.0.2
@@ -19,7 +19,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  very_good_analysis: ^5.0.0+1  
   flutter_lints: ^2.0.0
 
 

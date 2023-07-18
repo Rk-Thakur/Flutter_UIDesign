@@ -1,5 +1,5 @@
+import 'package:fitness_components/fitness_component.dart';
 import 'package:flutter/material.dart';
-import 'package:Fitness_App_Components/fitness_component.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

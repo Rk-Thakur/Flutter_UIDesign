@@ -1,2 +1,2 @@
-export 'package:Fitness_App_Resources/fitness_resouces.dart';
+export 'package:fitness_resources/fitness_resources.dart';
 export './src/general/picture.dart';

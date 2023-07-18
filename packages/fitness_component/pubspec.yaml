@@ -1,4 +1,4 @@
-name: Fitness_App_Components
+name: fitness_components
 description: Fitness App with Mono Setup.
 publish_to: none
 version: 0.0.1
@@ -8,13 +8,17 @@ environment:
   flutter: '>=3.10.4'
 
 dependencies: 
+  fitness_resources: any 
   flutter:  
     sdk: flutter
   flutter_svg: ^2.0.7   
-  Fitness_App_Resources: any
   vector_graphics: ^1.1.7
 
-
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^5.0.0+1
+  
 flutter:
   generate: true
   uses-material-design: true

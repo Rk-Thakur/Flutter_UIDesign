@@ -1,4 +1,4 @@
-name: Fitness_App_Resources
+name: fitness_resources
 description: Fitness App with Mono Setup.
 publish_to: none
 version: 0.0.1
@@ -10,6 +10,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   vector_graphics_compiler: ^1.1.7
+  very_good_analysis: ^5.0.0+1
   
 flutter:
   generate: true

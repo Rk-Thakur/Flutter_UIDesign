@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/packages/fitness/melos_fitness.iml" filepath="$PROJECT_DIR$/packages/fitness/melos_fitness.iml" />
-      <module fileurl="file://$PROJECT_DIR$/packages/fitness_component/melos_Fitness_App_Components.iml" filepath="$PROJECT_DIR$/packages/fitness_component/melos_Fitness_App_Components.iml" />
-      <module fileurl="file://$PROJECT_DIR$/packages/fitness_resources/melos_Fitness_App_Resources.iml" filepath="$PROJECT_DIR$/packages/fitness_resources/melos_Fitness_App_Resources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/fitness_component/melos_fitness_components.iml" filepath="$PROJECT_DIR$/packages/fitness_component/melos_fitness_components.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/fitness_resources/melos_fitness_resources.iml" filepath="$PROJECT_DIR$/packages/fitness_resources/melos_fitness_resources.iml" />
       <module fileurl="file://$PROJECT_DIR$/melos_fitness_app.iml" filepath="$PROJECT_DIR$/melos_fitness_app.iml" />
     </modules>
   </component>
