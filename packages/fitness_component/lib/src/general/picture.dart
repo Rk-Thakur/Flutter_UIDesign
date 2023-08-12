@@ -21,7 +21,7 @@ class Picture extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SvgPicture(
-      AssetBytesLoader(source, packageName: 'Fitness_App_Resources'),
+      AssetBytesLoader(source, packageName: 'fitness_resources'),
       width: width,
       height: height,
       fit: fit,

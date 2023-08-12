@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   fitness_components: any
   fitness_resources: any
+  google_fonts: ^5.1.0
 
 
   cupertino_icons: ^1.0.2
