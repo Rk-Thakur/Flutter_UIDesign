@@ -13,19 +13,25 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Freminder(),
-            SizedBox(
-              height: 50.h,
-            ),
-            const SleepSchedule(),
-            SizedBox(
-              height: 50.h,
-            ),
-            const Progress(),
-            SizedBox(
-              height: 50.h,
-            ),
             const TodayTarget(),
+            SizedBox(
+              height: 10.h,
+            ),
+            const SleepBanner(),
+            SizedBox(
+              height: 10.h,
+            ),
+            const HomeBanner(),
+            SizedBox(
+              height: 10.h,
+            ),
+            const DailyAction(
+              title: 'Today Target',
+              buttonTitle: 'Check',
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
           ],
         ),
       ),

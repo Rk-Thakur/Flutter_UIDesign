@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FButton extends StatelessWidget {
-  const FButton({super.key});
+  const FButton({
+    required this.buttonTitle,
+    required this.firstColor,
+    required this.secondColor,
+    super.key,
+  });
+  final String buttonTitle;
+  final Color firstColor;
+  final Color secondColor;
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +24,8 @@ class FButton extends StatelessWidget {
           vertical: 14.h,
         ),
         decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            colors: [
-              Color(0xff92a3fd),
-              Color(0xff9dceff),
-            ],
+          gradient: LinearGradient(
+            colors: [firstColor, secondColor],
             begin: Alignment.bottomRight,
             end: Alignment.topLeft,
           ),
@@ -28,7 +33,7 @@ class FButton extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            'Learn More',
+            buttonTitle,
             style: TextStyle(
               color: Colors.white,
               fontSize: 15.sp,

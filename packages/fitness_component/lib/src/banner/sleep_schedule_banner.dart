@@ -65,7 +65,11 @@ class SleepSchedule extends StatelessWidget {
                 SizedBox(
                   height: 15.h,
                 ),
-                const FButton(),
+                const FButton(
+                  buttonTitle: 'Learn More',
+                  firstColor: Color(0xff92a3fd),
+                  secondColor: Color(0xff9dceff),
+                ),
               ],
             ),
           ),
