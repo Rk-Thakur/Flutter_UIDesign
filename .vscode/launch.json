@@ -1,0 +1,73 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "uidesign",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "fitness",
+            "cwd": "packages/fitness",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "fitness (profile mode)",
+            "cwd": "packages/fitness",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "fitness (release mode)",
+            "cwd": "packages/fitness",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "fitness_component",
+            "cwd": "packages/fitness_component",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "fitness_component (profile mode)",
+            "cwd": "packages/fitness_component",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "fitness_component (release mode)",
+            "cwd": "packages/fitness_component",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "fitness_resources",
+            "cwd": "packages/fitness_resources",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "fitness_resources (profile mode)",
+            "cwd": "packages/fitness_resources",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "fitness_resources (release mode)",
+            "cwd": "packages/fitness_resources",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

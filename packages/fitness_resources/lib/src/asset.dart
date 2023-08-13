@@ -8,5 +8,10 @@ class Asset {
 class AssetImages {
   const AssetImages();
 
+  String get sleep => 'assets/images-bin/sleep.svg.vec';
+  String get progress => 'assets/images-bin/progress.svg.vec';
   String get men => 'assets/images-bin/men.svg.vec';
+  String get calander => 'assets/images-bin/calander.svg.vec';
+  String get glass => 'assets/images-bin/glass.svg.vec';
+  String get boot => 'assets/images-bin/boot.svg.vec';
 }
