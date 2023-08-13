@@ -44,8 +44,7 @@ class _FirstPageState extends State<FirstPage> {
       backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const SecondPage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const SecondPage()));
         },
         child: const Icon(Icons.add),
       ),
@@ -112,8 +111,7 @@ class _FirstPageState extends State<FirstPage> {
                     Container(
                       height: 126.h,
                       decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(24.sp)),
+                          borderRadius: BorderRadius.all(Radius.circular(24.sp)),
                           border: Border.all(
                             color: const Color(0xffecedef),
                             style: BorderStyle.solid,
@@ -136,7 +134,7 @@ class _FirstPageState extends State<FirstPage> {
                                           "Your plan \nis almost done!",
                                           style: TextStyle(
                                             color: const Color(0xff191d30),
-                                            fontSize: 24.sp,
+                                            fontSize: 22.sp,
                                             fontWeight: FontWeight.w700,
                                           ),
                                         )),
@@ -190,9 +188,7 @@ class _FirstPageState extends State<FirstPage> {
                                 child: Text(
                                   '70%',
                                   textAlign: TextAlign.end,
-                                  style: TextStyle(
-                                      fontSize: 24.sp,
-                                      color: const Color(0xff67b779)),
+                                  style: TextStyle(fontSize: 24.sp, color: const Color(0xff67b779)),
                                 ),
                               ),
                             )
@@ -207,15 +203,13 @@ class _FirstPageState extends State<FirstPage> {
                     Stack(
                       children: [
                         Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(24.sp)),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.sp)),
                           elevation: 4,
                           child: Container(
                               width: 375.w,
                               height: 101.h,
                               decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(24.sp)),
+                                borderRadius: BorderRadius.all(Radius.circular(24.sp)),
                                 // image: const DecorationImage(
                                 //     image: AssetImage("assets/gradient.png"),
                                 //     fit: BoxFit.cover),
@@ -234,10 +228,8 @@ class _FirstPageState extends State<FirstPage> {
                                   Padding(
                                     padding: EdgeInsets.only(left: 20.sp),
                                     child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           "Get vaccinated",
@@ -264,10 +256,7 @@ class _FirstPageState extends State<FirstPage> {
                                 ],
                               )),
                         ),
-                        Positioned(
-                            bottom: 3.h,
-                            left: 170.w,
-                            child: Image.asset('assets/pin.png'))
+                        Positioned(bottom: 3.h, left: 170.w, child: Image.asset('assets/pin.png'))
                       ],
                     ),
                     SizedBox(
@@ -294,38 +283,33 @@ class _FirstPageState extends State<FirstPage> {
                               children: [
                                 Slidable(
                                   closeOnScroll: true,
-                                  startActionPane: ActionPane(
-                                      motion: const ScrollMotion(),
-                                      children: [
-                                        SlidableAction(
-                                          spacing: 10.h,
-                                          onPressed: (doNothing) {},
-                                          icon: Icons.delete,
-                                        ),
-                                      ]),
-                                  endActionPane: ActionPane(
-                                      motion: const ScrollMotion(),
-                                      children: [
-                                        SlidableAction(
-                                          onPressed: (value) {},
-                                          borderRadius:
-                                              BorderRadius.circular(24.sp),
-                                          icon: Icons.archive,
-                                        ),
-                                      ]),
+                                  startActionPane:
+                                      ActionPane(motion: const ScrollMotion(), children: [
+                                    SlidableAction(
+                                      spacing: 10.h,
+                                      onPressed: (doNothing) {},
+                                      icon: Icons.delete,
+                                    ),
+                                  ]),
+                                  endActionPane:
+                                      ActionPane(motion: const ScrollMotion(), children: [
+                                    SlidableAction(
+                                      onPressed: (value) {},
+                                      borderRadius: BorderRadius.circular(24.sp),
+                                      icon: Icons.archive,
+                                    ),
+                                  ]),
                                   child: Container(
                                     width: 327.w,
                                     height: 100.h,
                                     decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.circular(24.sp),
-                                      border: Border.all(
-                                          width: 1.sp,
-                                          color: const Color(0xffecedef)),
+                                      borderRadius: BorderRadius.circular(24.sp),
+                                      border:
+                                          Border.all(width: 1.sp, color: const Color(0xffecedef)),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 20.sp, vertical: 20.sp),
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 20.sp, vertical: 20.sp),
                                       child: Row(
                                         children: [
                                           Image.asset(
@@ -338,18 +322,14 @@ class _FirstPageState extends State<FirstPage> {
                                               child: Row(
                                             children: [
                                               Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
                                                     e.medicineName,
                                                     style: TextStyle(
-                                                      color: const Color(
-                                                          0xff191d30),
-                                                      fontWeight:
-                                                          FontWeight.w700,
+                                                      color: const Color(0xff191d30),
+                                                      fontWeight: FontWeight.w700,
                                                       fontSize: 20.sp,
                                                     ),
                                                   ),
@@ -358,26 +338,20 @@ class _FirstPageState extends State<FirstPage> {
                                                     width: 215.w,
                                                     child: Row(
                                                       mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
+                                                          MainAxisAlignment.spaceBetween,
                                                       children: [
                                                         Text(
                                                           e.medicineDescription,
                                                           style: TextStyle(
-                                                            color: const Color(
-                                                                0xff8c8e97),
-                                                            fontWeight:
-                                                                FontWeight.w400,
+                                                            color: const Color(0xff8c8e97),
+                                                            fontWeight: FontWeight.w400,
                                                             fontSize: 16.sp,
                                                           ),
                                                         ),
                                                         Text(e.days,
                                                             style: TextStyle(
-                                                              color: const Color(
-                                                                  0xff8c8e97),
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
+                                                              color: const Color(0xff8c8e97),
+                                                              fontWeight: FontWeight.w400,
                                                               fontSize: 16.sp,
                                                             )),
                                                       ],
@@ -415,38 +389,33 @@ class _FirstPageState extends State<FirstPage> {
                               children: [
                                 Slidable(
                                   closeOnScroll: true,
-                                  startActionPane: ActionPane(
-                                      motion: const ScrollMotion(),
-                                      children: [
-                                        SlidableAction(
-                                          spacing: 10.h,
-                                          onPressed: (doNothing) {},
-                                          icon: Icons.delete,
-                                        ),
-                                      ]),
-                                  endActionPane: ActionPane(
-                                      motion: const ScrollMotion(),
-                                      children: [
-                                        SlidableAction(
-                                          onPressed: (value) {},
-                                          borderRadius:
-                                              BorderRadius.circular(24.sp),
-                                          icon: Icons.archive,
-                                        ),
-                                      ]),
+                                  startActionPane:
+                                      ActionPane(motion: const ScrollMotion(), children: [
+                                    SlidableAction(
+                                      spacing: 10.h,
+                                      onPressed: (doNothing) {},
+                                      icon: Icons.delete,
+                                    ),
+                                  ]),
+                                  endActionPane:
+                                      ActionPane(motion: const ScrollMotion(), children: [
+                                    SlidableAction(
+                                      onPressed: (value) {},
+                                      borderRadius: BorderRadius.circular(24.sp),
+                                      icon: Icons.archive,
+                                    ),
+                                  ]),
                                   child: Container(
                                     width: 327.w,
                                     height: 100.h,
                                     decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.circular(24.sp),
-                                      border: Border.all(
-                                          width: 1.sp,
-                                          color: const Color(0xffecedef)),
+                                      borderRadius: BorderRadius.circular(24.sp),
+                                      border:
+                                          Border.all(width: 1.sp, color: const Color(0xffecedef)),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 20.sp, vertical: 20.sp),
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 20.sp, vertical: 20.sp),
                                       child: Row(
                                         children: [
                                           Image.asset(
@@ -459,18 +428,14 @@ class _FirstPageState extends State<FirstPage> {
                                               child: Row(
                                             children: [
                                               Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
                                                     e.medicineName,
                                                     style: TextStyle(
-                                                      color: const Color(
-                                                          0xff191d30),
-                                                      fontWeight:
-                                                          FontWeight.w700,
+                                                      color: const Color(0xff191d30),
+                                                      fontWeight: FontWeight.w700,
                                                       fontSize: 20.sp,
                                                     ),
                                                   ),
@@ -479,26 +444,20 @@ class _FirstPageState extends State<FirstPage> {
                                                     width: 215.w,
                                                     child: Row(
                                                       mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
+                                                          MainAxisAlignment.spaceBetween,
                                                       children: [
                                                         Text(
                                                           e.medicineDescription,
                                                           style: TextStyle(
-                                                            color: const Color(
-                                                                0xff8c8e97),
-                                                            fontWeight:
-                                                                FontWeight.w400,
+                                                            color: const Color(0xff8c8e97),
+                                                            fontWeight: FontWeight.w400,
                                                             fontSize: 16.sp,
                                                           ),
                                                         ),
                                                         Text(e.days,
                                                             style: TextStyle(
-                                                              color: const Color(
-                                                                  0xff8c8e97),
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
+                                                              color: const Color(0xff8c8e97),
+                                                              fontWeight: FontWeight.w400,
                                                               fontSize: 16.sp,
                                                             )),
                                                       ],
