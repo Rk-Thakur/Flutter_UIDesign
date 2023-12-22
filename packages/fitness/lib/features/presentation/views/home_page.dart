@@ -14,24 +14,13 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const TodayTarget(),
-            SizedBox(
-              height: 10.h,
-            ),
+            10.verticalSpace,
             const SleepBanner(),
-            SizedBox(
-              height: 10.h,
-            ),
+            10.verticalSpace,
             const HomeBanner(),
-            SizedBox(
-              height: 10.h,
-            ),
-            const DailyAction(
-              title: 'Today Target',
-              buttonTitle: 'Check',
-            ),
-            SizedBox(
-              height: 10.h,
-            ),
+            10.verticalSpace,
+            const DailyAction(title: 'Today Target', buttonTitle: 'Check'),
+            10.verticalSpace,
           ],
         ),
       ),
